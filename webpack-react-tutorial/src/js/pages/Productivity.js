@@ -17,6 +17,7 @@ import Link from "@material-ui/core/Link";
 import TimerOutlined from '@material-ui/icons/TimerOutlined';
 import TimerOff from '@material-ui/icons/TimerOff';
 import Pomodoro from "../components/Pomodoro";
+import Tile from "../components/Tile";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -92,9 +93,9 @@ export default function Productivity() {
                                 <Pomodoro />
                             </Grid>
                         </div>
+                    <Tile name = 'Workstation assessment' num = '02' />
                     </Container>
                 </div>
-
             </main>
         </React.Fragment>
 
