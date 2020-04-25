@@ -24,9 +24,9 @@ class LongBreak extends React.Component {
     }
     render() {
         return (
-            <div class="col-md-4">
-                <p class="text center lead">Long Break</p>
-                <button type="button" class="btn btn-primary btn-lg" onClick={this.props.longBreak}>10 minutes</button>
+            <div className="col-md-4">
+                <p className="text center lead">Long Break</p>
+                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.longBreak}>10 minutes</button>
             </div>
         );
     }
@@ -38,9 +38,9 @@ class Session extends React.Component {
     }
     render() {
         return (
-            <div class="col-md-4">
-                <p class="text center lead">Session</p>
-                <button type="button" class="btn btn-primary btn-lg" onClick={this.props.session}>25 minutes</button>
+            <div className="col-md-4">
+                <p className="text center lead">Session</p>
+                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.session}>25 minutes</button>
             </div>
         );
     }
@@ -54,9 +54,9 @@ class ShortBreak extends React.Component {
 
     render() {
         return (
-            <div class="col-md-4">
-                <p class="text center lead">Short Break</p>
-                <button type="button" class="btn btn-primary btn-lg" onClick={this.props.shortBreak}>5 minutes</button>
+            <div className="col-md-4">
+                <p className="text center lead">Short Break</p>
+                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.shortBreak}>5 minutes</button>
             </div>
         );
     }
@@ -182,21 +182,21 @@ class Pomodoro extends React.Component {
 
         return (
             <div>
-                <div class="row" style={{ paddingTop: 100, paddingLeft: 100 }}>
+                <div className="row" style={{ paddingTop: 100, paddingLeft: 100 }}>
                     <div></div>
                     <ShortBreak shortBreak={this.shortBreak} />
                     <Session session={this.session} />
                     <LongBreak longBreak={this.longBreak} />
                 </div>
-                <div class="row" style={{ paddingLeft: 50 }}>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                <div className="row" style={{ paddingLeft: 50 }}>
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
                         <Timer time={this.state.time} seconds={this.state.seconds} />
                     </div>
                 </div>
-                <div class="row">&nbsp;</div>
-                <div class="row" style={{ paddingLeft: 100 }}>
-                    <div class="col-md-4"></div>
+                <div className="row">&nbsp;</div>
+                <div className="row" style={{ paddingLeft: 100 }}>
+                    <div className="col-md-4"></div>
                     <StopButton stopCountDown={this.stopCountDown} />
                     <StartButton startCountDown={this.startCountDown} />
 
