@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Navigation from "../components/Navigation";
-import Fooder from "../components/Fooder";
+import Footer from "../components/Footer";
 import HomeMain from "../components/HomeMain";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
         <React.Fragment>
             <Navigation/>
             <HomeMain/>
-            <Fooder/>
+            <Footer/>
         </React.Fragment>
 	)
 }
