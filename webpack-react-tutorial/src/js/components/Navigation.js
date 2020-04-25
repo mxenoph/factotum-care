@@ -77,6 +77,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const pages_a = [
+  {name:"Home",url:"/"},
+  {name:"About",url:"/"}
+];
+const pages_b = [
+  {name:"Workstation Assesment",url:"/"},
+  {name:"Physical and Mental Health",url:"/"},
+  {name:"Productivity Booster",url:"/"},
+  {name:"Manage your surroundings",url:"/"}
+];
+
+
 export default function PersistentDrawerRight() {
   const classes = useStyles();
   const theme = useTheme();
@@ -139,18 +151,18 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          {['Home', 'About'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
+          {pages_a.map((page) => (
+            <ListItem button component="a" href={page.url} key={page.name}>
+              <ListItemText primary={page.name} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['Workstation Assesment', 'Physical and Mental Health', 'Productivity Booster', 'Manage your surroundings'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
+          {pages_b.map((page) => (
+            <ListItem button component="a" href={page.url} key={page.name}>
+             <ListItemText primary={page.name} />
+           </ListItem>
           ))}
         </List>
        
