@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import Button from "@material-ui/core/Button";
+import TimerOutlined from '@material-ui/icons/TimerOutlined';
+import TimerOff from '@material-ui/icons/TimerOff';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
+// Based on git@github.com:pasDamola/ReactPomodoro.git (fetch)
 class Timer extends React.Component {
     constructor(props) {
         super(props);
@@ -8,26 +14,15 @@ class Timer extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1 style={{ fontSize: 100 }}>{this.props.time}:{this.props.seconds}</h1>
+            <Typography
+              variant="h5"
+              align="center"
+              color="textSecondary"
+            >
+                {this.props.time}:{this.props.seconds}
+            </Typography>
+            
 
-            </div>
-        );
-    }
-
-
-}
-
-class LongBreak extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <div className="col-md-4">
-                <p className="text center lead">Long Break</p>
-                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.longBreak}>10 minutes</button>
-            </div>
         );
     }
 }
@@ -38,51 +33,33 @@ class Session extends React.Component {
     }
     render() {
         return (
-            <div className="col-md-4">
-                <p className="text center lead">Session</p>
-                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.session}>25 minutes</button>
-            </div>
+            <Button variant="outlined" color="primary" onClick={this.props.session}>
+                 session reset
+            </Button>
         );
     }
 }
 
-class ShortBreak extends React.Component {
-
+class Start extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="col-md-4">
-                <p className="text center lead">Short Break</p>
-                <button type="button" className="btn btn-primary btn-lg" onClick={this.props.shortBreak}>5 minutes</button>
-            </div>
-        );
-    }
-
-}
-
-class StartButton extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div style={{ marginRight: 5 }}>
-                <button className="btn btn-success" onClick={this.props.startCountDown}>Start</button>
-            </div>
+            <Button variant="outlined" color="primary" startIcon={<TimerOutlined />} onClick={this.props.startCountDown}>
+                Start a pomodoro
+            </Button>
         );
     }
 }
 
-class StopButton extends React.Component {
+class Stop extends React.Component {
     render() {
         return (
-            <div style={{ marginRight: 5, marginLeft: 30 }}>
-                <button className="btn btn-danger" onClick={this.props.stopCountDown}>Stop</button>
-            </div>
+            <Button variant="outlined" color="primary" startIcon={<TimerOff />} onClick={this.props.stopCountDown}>
+                Stop
+            </Button>
         );
     }
 }
@@ -94,16 +71,10 @@ class Pomodoro extends React.Component {
         super(props);
         this.state = {
             time: 25,
-            longBreakTime: 10,
-            shortBreakTime: '05',
             seconds: '00',
-
-
         }
         this.intervalHandle;
         this.secondsRemaining;
-        this.shortBreak = this.shortBreak.bind(this);
-        this.longBreak = this.longBreak.bind(this);
         this.session = this.session.bind(this);
         this.startCountDown = this.startCountDown.bind(this);
         this.stopCountDown = this.stopCountDown.bind(this);
@@ -154,59 +125,36 @@ class Pomodoro extends React.Component {
         clearInterval(this.intervalHandle);
     }
 
-    shortBreak() {
-        this.setState({
-            time: '05',
-            seconds: '00'
-        })
-    }
-
-    longBreak() {
-        this.setState({
-            time: 10,
-            seconds: '00'
-        })
-    }
-
     session() {
         this.setState({
             time: 25,
             seconds: '00'
         })
     }
-
-
-
-
+    
     render() {
 
         return (
-            <div>
-                <div className="row" style={{ paddingTop: 100, paddingLeft: 100 }}>
-                    <div></div>
-                    <ShortBreak shortBreak={this.shortBreak} />
-                    <Session session={this.session} />
-                    <LongBreak longBreak={this.longBreak} />
-                </div>
-                <div className="row" style={{ paddingLeft: 50 }}>
-                    <div className="col-md-4"></div>
-                    <div className="col-md-4">
-                        <Timer time={this.state.time} seconds={this.state.seconds} />
-                    </div>
-                </div>
-                <div className="row">&nbsp;</div>
-                <div className="row" style={{ paddingLeft: 100 }}>
-                    <div className="col-md-4"></div>
-                    <StopButton stopCountDown={this.stopCountDown} />
-                    <StartButton startCountDown={this.startCountDown} />
+            <React.Fragment>
+                    <Grid container spacing={2} justify="center">
+                        <Grid item>
+                            <Start startCountDown={this.startCountDown} />
+                        </Grid>
+                        <Grid item>
+                            <Stop stopCountDown={this.stopCountDown} />
+                        </Grid>
+                        <Grid item>
+                            <Session session={this.session} />
+                        </Grid>
+                        <Grid item>
+                            <Timer time={this.state.time} seconds={this.state.seconds} />
+                        </Grid>
+                    </Grid>
 
-
-                </div>
-            </div>
+            </React.Fragment>
         );
 
     }
-
 }
 
 
