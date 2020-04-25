@@ -1,0 +1,118 @@
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
+
+
+
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
+
+const cards = [
+    {id:1,title:"Workstation Assesment", url:"#", image:"/src/images/workplace1.jpg"},
+    {id:2,title:"Physical and Mental Health", url:"#", image:"/src/images/workplace1.jpg"},
+    {id:3,title:"Productivity Booster", url:"#", image:"/src/images/workplace1.jpg"},
+    {id:4,title:"Manage your surroundings", url:"#", image:"/src/images/workplace1.jpg"}
+];
+
+/* Title
+<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+Factotum Care
+</Typography>
+*/
+export default function HomeMain() {
+  const classes = useStyles();
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      
+      <main>
+        {/* Hero unit */}
+        <div className={classes.heroContent}>
+          <Container maxWidth="lg">
+             
+            
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+            This is a collection of resources
+            to help you tackle teleworking-related challenges
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+            To stay safe we work from home. However, before the COVID-19 pandemic remote work was possible for only few professionals. The vast majority of the workforce has not been trained on assessing its workstation and often neglects how vital it is. 
+            Impromptu workstations and the distractions we face at home pose challenges for our health, our efficiency and our productivity.
+            </Typography>
+          </Container>
+        </div>
+        <Container className={classes.cardGrid} maxWidth="md">
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card.id} xs={12} sm={6} md={6}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={card.image}
+                    title={card.title}
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {card.title}
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button href={card.url} size="small" color="primary">
+                      View
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+    </React.Fragment>
+  );
+}
