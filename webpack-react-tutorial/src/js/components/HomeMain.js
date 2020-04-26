@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -49,17 +49,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [
-    {id:1,title:"Workstation Assesment", url:"#", image:"/src/images/workplace1.jpg"},
-    {id:2,title:"Physical and Mental Health", url:"#", image:"/src/images/workplace1.jpg"},
-    {id:3,title:"Productivity Booster", url:"#", image:"/src/images/workplace1.jpg"},
-    {id:4,title:"Manage your surroundings", url:"#", image:"/src/images/workplace1.jpg"}
+    {id:1,title:"Workstation Assesment", url:"#", image:"/src/images/workplace1.jpg",description: "Is my work station set up correctly? What is the importance of an organised work station?"},
+    {id:2,title:"Physical and Mental Health", url:"/mental", image:"./physical_mental_rotate.jpg", description: "Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act."},
+    {id:3,title:"Productivity Booster", url:"/productivity", image:"./physical_mental_rotate.jpg", description: "Ways to boost your productivity!"},
+    {id:4,title:"Manage your surroundings", url:"#", image:"/src/images/workplace1.jpg",  description: "Take a look around you. Make some changes!" }
 ];
 
-/* Title
-<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-Factotum Care
-</Typography>
-*/
+
 export default function HomeMain() {
   const classes = useStyles();
 
@@ -68,7 +64,6 @@ export default function HomeMain() {
       <CssBaseline />
       
       <main>
-        {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="lg">
              
@@ -84,7 +79,6 @@ export default function HomeMain() {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card.id} xs={12} sm={6} md={6}>
@@ -99,7 +93,7 @@ export default function HomeMain() {
                         {card.title}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                        {card.description}
                     </Typography>
                   </CardContent>
                   <CardActions>

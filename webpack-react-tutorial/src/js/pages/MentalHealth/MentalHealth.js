@@ -5,9 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Main from './Main';
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer';
+import Navigation from '../../components/Navigation'
+import Footer from '../../components/Footer';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   mainPage : {
-    marginTop: theme.spacing(5),
-
+    margin: theme.spacing(5),
   }
 }));
 
@@ -27,6 +26,11 @@ const mainFeaturedPost = {
   description:
       'Tips on maintaining physical and mental health'
 };
+
+const doSomeYoga = {
+  title: 'Do Some Yoga',
+};
+
 
 const featuredPosts = [
   {
@@ -48,6 +52,21 @@ const featuredPosts = [
 
 ];
 
+const yogaPosts= [
+  {
+    isYoga : true,
+    title: 'Do Some Yoga',
+    url: 'https://www.youtube.com/embed/tAUf7aajBWE',
+    component: 'iframe'
+  },
+  {
+    isYoga : true,
+    title: 'Stretch Stretch Stretch!',
+    url: 'https://www.youtube.com/embed/P8DOZRtIIEQ',
+    component: 'iframe'
+  },
+];
+
 export default function MentalHealth() {
   const classes = useStyles();
 
@@ -63,8 +82,11 @@ export default function MentalHealth() {
               <FeaturedPost key={post.title} post={post} />
             ))}
           </Grid>
-          <Grid container spacing={5} className={classes.mainGrid}>
-      
+          <Grid container justify={"space-evenly"} spacing={3} >
+            {yogaPosts.map((post) => (
+              <FeaturedPost key={post.title} post={post}/>
+            ))}
+
           </Grid>
         </main>
       </Container>

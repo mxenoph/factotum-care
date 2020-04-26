@@ -8,8 +8,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
+  root: {
+      height: "100%"
+  },
   media: {
     width: "60%",
     height: 340,
@@ -17,29 +21,38 @@ const useStyles = makeStyles({
   },
   actionArea: {
     height : "500px"
+  },
+  actionAreaYoga : {
+    height : "350px"
+  },
+  titleYoga : {
+    textAlign : "center",
+    padding : "30px"
   }
 });
 
 export default function MediaCard(data) {
   const classes = useStyles();
-  console.log(data.data.image);
 
   return (
     <Card className={classes.root}>
-      <CardActionArea className={classes.actionArea}>
-        <CardMedia
-          className={classes.media}
-          image={data.data.image}
-        />
+      
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Grid container>
+        <CardMedia 
+         component = {data.data.component}
+          className={data.data.isYoga? classes.actionAreaYoga :classes.media}
+          image={data.data.image}
+          src = {data.data.url}
+        />
+        </Grid>
+          <Typography className= {data.data.isYoga? classes.titleYoga : ""}gutterBottom variant="h5" component="h2">
               {data.data.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
           {data.data.description}
           </Typography>
-        </CardContent>
-      </CardActionArea>
+      </CardContent>
       <CardActions>
         <Button size="small" color="primary" href={data.data.url} target="_blank">
           Learn More
