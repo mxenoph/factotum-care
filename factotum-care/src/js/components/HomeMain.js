@@ -13,7 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-
+import MeditationImage from '../../../images/workplace1.jpg';
+import BreathImage from "../../../images/physical_mental_rotate.jpg"
+import WalkingImage from "../../../images/workstation_side.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,10 +51,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [
-    {id:1,title:"Workstation Assesment", url:"/workstation", image:"/src/images/workplace1.jpg",description: "Is my work station set up correctly? What is the importance of an organised work station?"},
-    {id:2,title:"Physical and Mental Health", url:"/mental", image:"./physical_mental_rotate.jpg", description: "Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act."},
-    {id:3,title:"Productivity Booster", url:"/productivity", image:"./physical_mental_rotate.jpg", description: "Ways to boost your productivity!"},
-    {id:4,title:"Manage your surroundings", url:"#", image:"/src/images/workplace1.jpg",  description: "Take a look around you. Make some changes!" }
+    {id:1,title:"Workstation Assesment", url:"/workstation", image:WalkingImage,description: "Is my work station set up correctly? What is the importance of an organised work station?"},
+    {id:2,title:"Physical and Mental Health", url:"/mental", image:BreathImage, description: "Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act."},
+    {id:3,title:"Productivity Booster", url:"/productivity", image:BreathImage, description: "Ways to boost your productivity!"},
+    {id:4,title:"Manage your surroundings", url:"/surroundings", image:MeditationImage,  description: "Take a look around you. Make some changes!" }
 ];
 
 

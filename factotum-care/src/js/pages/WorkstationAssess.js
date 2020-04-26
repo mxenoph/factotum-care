@@ -11,6 +11,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import FirstStep from '../../../images/workstation_front.jpg';
+import SecondStep from "../../../images/workstation_side.jpg"
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -51,14 +54,14 @@ const cards = [
     id: 1,
     title: "Workstation Assesment 1",
     // url: "/workspace",
-    image: "/src/images/workstation_front.jpg",
+    image: FirstStep,
     // description: "Get tips on how to organize your workspace.",
   },
   {
     id: 4,
     // title: "Workstation Assessment 4",
     // url: "/surroundings",
-    image: "/src/images/workstation_side.jpg",
+    image: SecondStep,
     // description: "Need some help to organize your house and family?",
   },
 ];

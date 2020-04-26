@@ -8,7 +8,8 @@ import FeaturedPost from './FeaturedPost';
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer';
 import MeditationImage from '../../../images/meditation.png';
-import BreathImage from "../../../images/physical_1.jpg"
+import BreathImage from "../../../images/physical_mental_breath.jpg"
+import WalkingImage from "../../../images/physical_mental_walking.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,10 +48,9 @@ const featuredPosts = [
     url: 'http://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/novel-coronavirus-2019-ncov-technical-guidance/stay-physically-active-during-self-quarantine',
     description:
       'Even in small spaces, walking around or walking on the spot, can help you remain active. If you have a call, stand or walk around your home while you speak, instead of sitting down. ',
-      image: './physical_mental_walking.jpg',
+      image: WalkingImage,
       imageText: 'Image Text',
   },
-
 ];
 
 const yogaPosts= [

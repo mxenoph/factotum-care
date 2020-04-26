@@ -20,7 +20,7 @@ class App extends Component {
             <Route  path="/mental" exact component={() => <MentalHealth />}/>
             <Route  path="/productivity" exact component={() => <Productivity />}/>
             <Route  path="/workstation" exact component={() => <WorkstationAssess />}/>
-            <Route  path="/vertguide" exact component={() => <VertGuide />}/>
+            <Route  path="/surroundings" exact component={() => <VertGuide />}/>
             </Switch>
         </Router>          
         </div>
