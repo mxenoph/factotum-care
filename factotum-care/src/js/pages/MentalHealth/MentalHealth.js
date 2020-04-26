@@ -7,7 +7,8 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer';
-import MeditationImage from '../../../images/meditation.png'
+import MeditationImage from '../../../images/meditation.png';
+import BreathImage from "../../../images/physical_1.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +39,7 @@ const featuredPosts = [
     url: 'https://www.webmd.com/balance/stress-management/stress-relief-breathing-techniques#1',
     description:
       'Many breathing exercises take only a few minutes. When you have more time, you can do them for 10 minutes or more to get even greater benefits.',
-    image: './physical_1.jpg',
+    image: BreathImage,
     imageText: 'DeepBreaths',
   },
   {
