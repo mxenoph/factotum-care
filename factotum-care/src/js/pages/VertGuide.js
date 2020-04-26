@@ -99,7 +99,7 @@ export default function VerticalLinearStepper() {
                     style={{ width: "100%" }}
                     className={classes.img}
                     alt="complex"
-                    src={FirstImage}
+                    src= {SecondImage}
                   />
                 </Grid>
                 <Grid item xs={6}>
