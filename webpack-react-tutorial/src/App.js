@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Route, Link,Switch, BrowserRouter as Router } from 'react-router-dom'
-import HomePage from './js/pages/home'
+import HomePage from './js/pages/Home'
 import Blog from './js/MentalHealth/Blog'
 
 
