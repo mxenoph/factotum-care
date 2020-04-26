@@ -38,9 +38,15 @@ const useStyles = makeStyles((theme) => ({
         height: "100%",
         display: "flex",
         flexDirection: "column",
+        position: 'relative'
     },
     cardMedia: {
         paddingTop: "56.25%", // 16:9
+        position: 'absolute',
+        top: '20px',
+        left: '20px',
+        color: 'white',
+        backgroundColor: 'black'
     },
     cardContent: {
         flexGrow: 1,
@@ -51,7 +57,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// basecamp needs to be referenced for this
+const cards = [
+    { id: 1, title: "Prefer email over teleconferencing.", url: "#", desc:'Internal communication based on long-form writing, rather than a verbal tradition of meetings, speaking, and chatting, leads to a welcomed reduction in meetings, video conferences, calls, or other real-time opportunities to interrupt and be interrupted.'},
+    { id: 2, title: "Speaking only helps who’s in the room, writing helps everyone.", url: "#", desc:"This includes people who couldn't make it, or future employees who join years from now."},
+    { id: 3, title: "Five people in a room for an hour isn't a one hour meeting, it's a five hour meeting. Be mindful of the tradeoffs.", url: "#", desc: 'Ask politely to be exclused from a meeting in which you are not required.'},
+    { id: 4, title: "Write at the right time.", url: "#", desc:"Sharing something at 5pm may keep someone at work longer..."}
+];
 
 export default function Productivity() {
 
@@ -93,9 +105,57 @@ export default function Productivity() {
                                 <Pomodoro />
                             </Grid>
                         </div>
-                    <Tile name = 'Workstation assessment' num = '02' />
                     </Container>
                 </div>
+                <div className={classes.heroContent}>
+                    <Container maxWidth="lg">
+                        <Typography
+                            component="h1"
+                            variant="h2"
+                            align="center"
+                            color="textPrimary"
+                            gutterBottom
+                        >
+                            Tackling meetings and emails
+                        </Typography>
+                        <Typography
+                            variant="h5"
+                            align="center"
+                            color="textSecondary"
+                            paragraph
+                        >
+                            Drop a Few lines, don't forget to mention the rules are from basecamp
+                        </Typography>
+                        </Container>
+                </div>
+                <Container className={classes.cardGrid} maxWidth="md">
+                    {/* End hero unit */}
+                    <Grid container spacing={4}>
+                        {cards.map((card) => (
+                            <Grid item key={card.id} xs={12} sm={6} md={6}>
+                                <Card className={classes.card}>
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        title={card.title}
+                                    />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {card.title}
+                                        </Typography>
+                                        <Typography>
+                                            {card.desc}
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button href={card.url} size="small" color="primary">
+                                            View
+                    </Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Container>
             </main>
         </React.Fragment>
 
