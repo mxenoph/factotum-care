@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -22,7 +23,9 @@ const useStyles = makeStyles({
     height : "500px"
   },
   actionAreaYoga : {
-    height : "350px"
+    height: 340,
+    width: "100%",
+    backgroundRepeat : "round"
   },
   titleYoga : {
     textAlign : "center",
@@ -40,23 +43,23 @@ export default function MediaCard(data) {
           <Grid container>
         <CardMedia 
          component = {data.data.component}
-          className={data.data.isYoga? classes.actionAreaYoga :classes.media}
+          className={data.data.isKids? classes.actionAreaYoga :classes.media}
           image={data.data.image}
           src = {data.data.url}
         />
         </Grid>
-          <Typography className= {data.data.isYoga? classes.titleYoga : ""}gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2">
               {data.data.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
           {data.data.description}
           </Typography>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary" href={data.data.url} target="_blank">
           Learn More
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

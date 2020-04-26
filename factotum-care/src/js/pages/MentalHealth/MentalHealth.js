@@ -7,7 +7,7 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer';
-import MeditationImage from '../../../images/meditation.png';
+import MeditationImage from '../../../images/yoga_banner_2.jpg';
 import BreathImage from "../../../images/physical_mental_breath.jpg"
 import WalkingImage from "../../../images/physical_mental_walking.jpg"
 
@@ -28,11 +28,6 @@ const mainFeaturedPost = {
   description:
       'Tips on maintaining physical and mental health'
 };
-
-const doSomeYoga = {
-  title: 'Do Some Yoga',
-};
-
 
 const featuredPosts = [
   {

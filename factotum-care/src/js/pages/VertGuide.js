@@ -10,13 +10,16 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import FirstImage from '../../images/workplace1.jpg';
+import SecondImage from "../../images/workstation_side.jpg"
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
     width: "50%",
-    margin: "0 auto",
+    margin: "36px auto",
   },
   button: {
     marginTop: theme.spacing(1),
@@ -41,15 +44,10 @@ const useStyles = makeStyles((theme) => ({
   img: {
     margin: "auto",
     display: "block",
-    // maxWidth: "50%",
-    // maxHeight: "50%",
-  },
-  instruction: {
-    // maxWidth: "50%",
   },
 }));
 function getSteps() {
-  return ["Step1", "Step 2", "Step 3"];
+  return ["Step1", "Step 2", "Step 3", "Step 4"];
 }
 function getStepContent(step) {
   switch (step) {
@@ -59,22 +57,13 @@ function getStepContent(step) {
       return "If your feet do not reach the ground use a foot rest.";
     case 2:
       return `Place the keyboard and mouse 10cm from table edge.`;
+    case 3:
+      return `Make sure you have a good intenet connection. Losing internet access can be frustrating both for you and your teamates. For better results place the router somewhere high and away from metal objects.`;
     default:
       return "Unknown step";
   }
 }
-function getStepImage(step) {
-  switch (step) {
-    case 0:
-      return "/src/images/physical_mental_breath.jpg";
-    case 1:
-      return "/src/images/physical_mental_breath.jpg";
-    case 2:
-      return "/src/images/physical_mental_breath.jpg";
-    default:
-      return "Unknown step";
-  }
-}
+
 export default function VerticalLinearStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -110,8 +99,7 @@ export default function VerticalLinearStepper() {
                     style={{ width: "100%" }}
                     className={classes.img}
                     alt="complex"
-                    src="/src/images/workstation_front.jpg"
-                    // src={getStepImage(index)}
+                    src={FirstImage}
                   />
                 </Grid>
                 <Grid item xs={6}>
@@ -119,8 +107,7 @@ export default function VerticalLinearStepper() {
                     style={{ width: "100%" }}
                     className={classes.img}
                     alt="complex"
-                    src="/src/images/workstation_side.jpg"
-                    // src={getStepImage(index)}
+                    src= {SecondImage}
                   />
                 </Grid>
               </Grid>
@@ -160,7 +147,7 @@ export default function VerticalLinearStepper() {
           </Button>
         </Paper>
       )}
-    <Footer />
+      <Footer />
     </div>
   );
 }

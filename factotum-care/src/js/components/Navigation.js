@@ -13,10 +13,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
 
 const drawerWidth = 240;
 
@@ -55,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
   },
@@ -79,13 +76,12 @@ const useStyles = makeStyles((theme) => ({
 
 const pages_a = [
   {name:"Home",url:"/"},
-  {name:"About",url:"/about"}
 ];
 const pages_b = [
   {name:"Workstation Assesment",url:"/workstation"},
   {name:"Physical and Mental Health",url:"/mental"},
   {name:"Productivity Booster",url:"/productivity"},
-  {name:"Manage your surroundings",url:"/vertguide"}
+  {name:"Manage your surroundings",url:"/surroundings"}
 ];
 
 
