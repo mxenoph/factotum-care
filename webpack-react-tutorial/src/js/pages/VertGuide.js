@@ -7,13 +7,16 @@ import StepContent from "@material-ui/core/StepContent";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    width: "50%",
+    margin: "0 auto",
   },
   button: {
     marginTop: theme.spacing(1),
@@ -24,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   resetContainer: {
     padding: theme.spacing(3),
+    textAlign: "center",
   },
   card: {
     display: "flex",
@@ -34,12 +38,19 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {
     width: 160,
   },
+  img: {
+    margin: "auto",
+    display: "block",
+    // maxWidth: "50%",
+    // maxHeight: "50%",
+  },
+  instruction: {
+    // maxWidth: "50%",
+  },
 }));
-
 function getSteps() {
   return ["Step1", "Step 2", "Step 3"];
 }
-
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -52,41 +63,70 @@ function getStepContent(step) {
       return "Unknown step";
   }
 }
-
+function getStepImage(step) {
+  switch (step) {
+    case 0:
+      return "/src/images/physical_mental_breath.jpg";
+    case 1:
+      return "/src/images/physical_mental_breath.jpg";
+    case 2:
+      return "/src/images/physical_mental_breath.jpg";
+    default:
+      return "Unknown step";
+  }
+}
 export default function VerticalLinearStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
   const handleReset = () => {
     setActiveStep(0);
   };
-
   return (
     <div>
-    <Navigation />
-    <div className={classes.root}>
-      
-      <Stepper activeStep={activeStep} orientation="vertical">
+      <Navigation />
+      <Stepper
+        className={classes.root}
+        activeStep={activeStep}
+        orientation="vertical"
+      >
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              {/* <CardMedia
-                className="cardMedia"
-                image="https://source.unsplash.com/random"
-                title="kati"
-              /> */}
-              <Typography>{getStepContent(index)}</Typography>
-
+              <Grid
+                container
+                spacing={2}
+                // direction="column"
+              >
+                <Grid item xs={6}>
+                  <img
+                    style={{ width: "100%" }}
+                    className={classes.img}
+                    alt="complex"
+                    src="/src/images/workstation_front.jpg"
+                    // src={getStepImage(index)}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <img
+                    style={{ width: "100%" }}
+                    className={classes.img}
+                    alt="complex"
+                    src="/src/images/workstation_side.jpg"
+                    // src={getStepImage(index)}
+                  />
+                </Grid>
+              </Grid>
+              <Typography className={classes.instruction}>
+                {getStepContent(index)}
+              </Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -120,9 +160,7 @@ export default function VerticalLinearStepper() {
           </Button>
         </Paper>
       )}
-     
+    <Footer />
     </div>
-     <Footer />
-     </div>
   );
 }
