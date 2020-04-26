@@ -17,6 +17,7 @@ import Link from "@material-ui/core/Link";
 import TimerOutlined from '@material-ui/icons/TimerOutlined';
 import TimerOff from '@material-ui/icons/TimerOff';
 import Pomodoro from "../components/Pomodoro";
+import EmailFilters from "../components/EmailFilters";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -148,7 +149,7 @@ export default function Productivity() {
                                     <CardActions>
                                         <Button href={card.url} size="small" color="primary">
                                             View
-                    </Button>
+                                        </Button>
                                     </CardActions>
                                 </Card>
                             </Grid>
@@ -177,6 +178,7 @@ export default function Productivity() {
                             email is used in moderation it can become a distraction. In this section we provide useful email filters
                             and tips to help you organise your email and only be notified of work related emails during your working hours.
                         </Typography>
+                        <EmailFilters />
                     </Container>
                 </div>
             </main>
