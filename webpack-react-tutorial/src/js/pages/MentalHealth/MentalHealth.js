@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   mainPage : {
-    margin: theme.spacing(5),
+    margin: "40px auto",
   }
 }));
 
