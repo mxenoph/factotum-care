@@ -11,8 +11,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import FirstStep from '../../../images/workstation_front.jpg';
-import SecondStep from "../../../images/workstation_side.jpg"
+import FirstStep from '../../images/workstation_front.jpg';
+import SecondStep from "../../images/workstation_side.jpg"
 
 
 const useStyles = makeStyles((theme) => ({

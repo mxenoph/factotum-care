@@ -13,9 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import MeditationImage from '../../../images/workplace1.jpg';
-import BreathImage from "../../../images/physical_mental_rotate.jpg"
-import WalkingImage from "../../../images/workstation_side.jpg"
+import MeditationImage from '../../images/workplace1.jpg';
+import BreathImage from "../../images/physical_mental_rotate.jpg"
+import WalkingImage from "../../images/workstation_side.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
