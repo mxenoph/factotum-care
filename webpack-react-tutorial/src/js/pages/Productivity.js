@@ -17,7 +17,6 @@ import Link from "@material-ui/core/Link";
 import TimerOutlined from '@material-ui/icons/TimerOutlined';
 import TimerOff from '@material-ui/icons/TimerOff';
 import Pomodoro from "../components/Pomodoro";
-import Tile from "../components/Tile";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -59,10 +58,10 @@ const useStyles = makeStyles((theme) => ({
 
 // basecamp needs to be referenced for this
 const cards = [
-    { id: 1, title: "Prefer email over teleconferencing.", url: "#", desc:'Internal communication based on long-form writing, rather than a verbal tradition of meetings, speaking, and chatting, leads to a welcomed reduction in meetings, video conferences, calls, or other real-time opportunities to interrupt and be interrupted.'},
-    { id: 2, title: "Speaking only helps who’s in the room, writing helps everyone.", url: "#", desc:"This includes people who couldn't make it, or future employees who join years from now."},
-    { id: 3, title: "Five people in a room for an hour isn't a one hour meeting, it's a five hour meeting. Be mindful of the tradeoffs.", url: "#", desc: 'Ask politely to be exclused from a meeting in which you are not required.'},
-    { id: 4, title: "Write at the right time.", url: "#", desc:"Sharing something at 5pm may keep someone at work longer..."}
+    { id: 1, title: "Prefer email over teleconferencing.", url: "#", desc: 'Internal communication based on long-form writing, rather than a verbal tradition of meetings, speaking, and chatting, leads to a welcomed reduction in meetings, video conferences, calls, or other real-time opportunities to interrupt and be interrupted.' },
+    { id: 2, title: "Speaking only helps who’s in the room, writing helps everyone.", url: "#", desc: "This includes people who couldn't make it, or future employees who join years from now." },
+    { id: 3, title: "Five people in a room for an hour isn't a one hour meeting, it's a five hour meeting. Be mindful of the tradeoffs.", url: "#", desc: 'Ask politely to be exclused from a meeting in which you are not required.' },
+    { id: 4, title: "Write at the right time.", url: "#", desc: "Sharing something at 5pm may keep someone at work longer..." }
 ];
 
 export default function Productivity() {
@@ -126,7 +125,7 @@ export default function Productivity() {
                         >
                             Drop a Few lines, don't forget to mention the rules are from basecamp
                         </Typography>
-                        </Container>
+                    </Container>
                 </div>
                 <Container className={classes.cardGrid} maxWidth="md">
                     {/* End hero unit */}
@@ -156,6 +155,30 @@ export default function Productivity() {
                         ))}
                     </Grid>
                 </Container>
+                <div className={classes.heroContent}>
+                    <Container maxWidth="lg">
+                        <Typography
+                            component="h1"
+                            variant="h2"
+                            align="center"
+                            color="textPrimary"
+                            gutterBottom
+                        >
+                            Efficient use of emails
+                        </Typography>
+                        <Typography
+                            variant="h5"
+                            align="center"
+                            color="textSecondary"
+                            paragraph
+                        >
+                            While the number of employees, who traditionally communicated via personal meetings or telephone but
+                            are now forced to work from home, is rising, email is becoming more and more important. However, unless
+                            email is used in moderation it can become a distraction. In this section we provide useful email filters
+                            and tips to help you organise your email and only be notified of work related emails during your working hours.
+                        </Typography>
+                    </Container>
+                </div>
             </main>
         </React.Fragment>
 
