@@ -79,11 +79,11 @@ const useStyles = makeStyles((theme) => ({
 
 const pages_a = [
   {name:"Home",url:"/"},
-  {name:"About",url:"/about"}
+  {name:"About",url:"/"}
 ];
 const pages_b = [
   {name:"Workstation Assesment",url:"/"},
-  {name:"Physical and Mental Health",url:"/mental"},
+  {name:"Physical and Mental Health",url:"/"},
   {name:"Productivity Booster",url:"/"},
   {name:"Manage your surroundings",url:"/"}
 ];

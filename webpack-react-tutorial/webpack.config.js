@@ -8,22 +8,8 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
-        },
+        }
       },
-      {
-        test: /\.md$/,
-        use: [
-            {
-                loader: "html-loader"
-            },
-            {
-                loader: "markdown-loader",
-                options: {
-                    /* your options here */
-                }
-            }
-        ]
-    },
       {
         test: /\.html$/,
         use: [
@@ -33,9 +19,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
