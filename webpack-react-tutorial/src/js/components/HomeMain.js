@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [
-    {id:1,title:"Workstation Assesment", url:"#", image:"/src/images/workplace1.jpg",description: "Is my work station set up correctly? What is the importance of an organised work station?"},
+    {id:1,title:"Workstation Assesment", url:"/workstation", image:"/src/images/workplace1.jpg",description: "Is my work station set up correctly? What is the importance of an organised work station?"},
     {id:2,title:"Physical and Mental Health", url:"/mental", image:"./physical_mental_rotate.jpg", description: "Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act."},
     {id:3,title:"Productivity Booster", url:"/productivity", image:"./physical_mental_rotate.jpg", description: "Ways to boost your productivity!"},
     {id:4,title:"Manage your surroundings", url:"#", image:"/src/images/workplace1.jpg",  description: "Take a look around you. Make some changes!" }

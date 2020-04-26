@@ -82,7 +82,7 @@ const pages_a = [
   {name:"About",url:"/about"}
 ];
 const pages_b = [
-  {name:"Workstation Assesment",url:"/"},
+  {name:"Workstation Assesment",url:"/workstation"},
   {name:"Physical and Mental Health",url:"/mental"},
   {name:"Productivity Booster",url:"/productivity"},
   {name:"Manage your surroundings",url:"/"}
