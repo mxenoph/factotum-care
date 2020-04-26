@@ -19,10 +19,11 @@ const useStyles = makeStyles({
 export default function FeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
+  console.log(post.description);
 
   return (
     <Grid item className={classes.cardDetails}>
- <MediaCard images={post.image}></MediaCard>
+ <MediaCard data={post}></MediaCard>
     </Grid>
   );
 }

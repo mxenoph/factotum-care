@@ -35,18 +35,18 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'Take Deep Breaths',
+    url: 'https://www.webmd.com/balance/stress-management/stress-relief-breathing-techniques#1',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Many breathing exercises take only a few minutes. When you have more time, you can do them for 10 minutes or more to get even greater benefits.',
     image: './physical_1.jpg',
-    imageText: 'Image Text',
+    imageText: 'DeepBreaths',
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: 'Stand Up and Walk',
+    url: 'http://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/novel-coronavirus-2019-ncov-technical-guidance/stay-physically-active-during-self-quarantine',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Even in small spaces, walking around or walking on the spot, can help you remain active. If you have a call, stand or walk around your home while you speak, instead of sitting down. ',
       image: './physical_mental_walking.jpg',
       imageText: 'Image Text',
   },

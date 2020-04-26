@@ -83,7 +83,7 @@ const pages_a = [
 ];
 const pages_b = [
   {name:"Workstation Assesment",url:"/"},
-  {name:"Physical and Mental Health",url:"/"},
+  {name:"Physical and Mental Health",url:"/mental"},
   {name:"Productivity Booster",url:"/"},
   {name:"Manage your surroundings",url:"/"}
 ];
