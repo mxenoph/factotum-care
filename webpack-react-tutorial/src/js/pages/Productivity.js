@@ -18,6 +18,8 @@ import TimerOutlined from '@material-ui/icons/TimerOutlined';
 import TimerOff from '@material-ui/icons/TimerOff';
 import Pomodoro from "../components/Pomodoro";
 import EmailFilters from "../components/EmailFilters";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -71,6 +73,7 @@ export default function Productivity() {
 
     return (
         <React.Fragment>
+            <Navigation />
             <CssBaseline />
             <main>
                 <div className={classes.heroContent}>
@@ -218,6 +221,7 @@ export default function Productivity() {
                     </Container>
                 </div>
             </main>
+            <Footer/>
         </React.Fragment>
 
     );
