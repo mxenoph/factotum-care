@@ -9,13 +9,8 @@ import Link from '@material-ui/core/Link';
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
     position: 'relative',
-    backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/random)',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
   },
   overlay: {
     position: 'absolute',
@@ -23,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.3)',
+    backgroundColor: 'rgba(0,0,100,.5)',
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -41,21 +36,14 @@ export default function MainFeaturedPost(props) {
 
   return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
-      {/* Increase the priority of the hero background image */}
       {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
       <div className={classes.overlay} />
-      <Grid container>
-        <Grid item md={6}>
+      <Grid  justify={"center"} container>
+        <Grid item >
           <div className={classes.mainFeaturedPostContent}>
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <Typography component="h1" variant="h3" color="inherit" >
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
-            </Typography>
-            <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link>
           </div>
         </Grid>
       </Grid>
