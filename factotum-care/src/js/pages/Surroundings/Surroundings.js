@@ -9,7 +9,7 @@ import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import PlantsImage from '../../../images/plants.jpg';
 import KidsImage from "../../../images/yoga_banner.jpg"
-// import CoupleImage from "../../../images/couple.jpg"
+import CoupleImage from "../../../images/working couple_afcolisson_202004.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +64,7 @@ const featuredPosts = [
     "differrent times, to have a better internet connection and less noise " +
     "during the meetings. Don't forget you're lucky to have each other during " +
     "the confinement and take your lunch breaks together, away from the laptop's screen.",
-    image: "./couple.png",
+    image: CoupleImage,
     imageText: "Couple",
   },
 ];
